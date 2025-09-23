@@ -3,16 +3,15 @@
 #include <string.h>
 
 //Constantes globais
-#define max_livros 50
+#define max_territorio 5
 #define tam_string 100
 
 //Definição da Estrutura
-struct Livro
+struct Territorio
 {
-    char nome[tam_string];
-    char autor[tam_string];
-    char editora[tam_string];
-    int edicao;
+    char nome[30];
+    char cor[10];
+    int tropas;
 };
 
 //Função para limpar o buffer de entrada
@@ -24,8 +23,8 @@ void limparBufferEntrada(){
 
 // Função principal
 int main() {
-    struct Livro biblioteca[max_livros];
-    int totalLivros = 0;
+    struct Territorio cadastro[max_territorio];
+    int totalTerritorio = 0;
     int opcao;
 
 
@@ -34,10 +33,10 @@ do {
     
     //Exibe o menu de opções
     printf("====================================\n");
-    printf("=====BIBLIOTECA - PARTE 1\n");
+    printf("      CADASTRANDO TERRITÓRIOS\n");
     printf("====================================\n");
-    printf("1- Cadastrar novo Livro\n");
-    printf("2- Listar todos os Livros\n");
+    printf("1- Cadastrar novo Território\n");
+    printf("2- Listar todos os Territórios\n");
     printf("0- Sair\n");
     printf("====================================\n");
     printf("Escolha uma opção:\n");
@@ -50,57 +49,118 @@ do {
     //Processamento da opção
     switch (opcao)
     {
-    case 1: //Cadastro de Livros
-        printf("--- Cadastro de Novo livro ---\n\n");
+    case 1: //Cadastro de Territórios
+        printf("--- Cadastro do Território 1 ---\n\n");
 
-        if (totalLivros < max_livros)
+        if (totalTerritorio < max_territorio)
         {
-            printf("Digite o nome do Livro:");
-            fgets(biblioteca[totalLivros].nome, tam_string, stdin);
+            printf("Digite o nome do Território:");
+            fgets(cadastro[totalTerritorio].nome, tam_string, stdin);
 
-            printf("Digite o nome do Autor:");
-            fgets(biblioteca[totalLivros].autor, tam_string, stdin);
+            printf("Digite a cor do Exército:");
+            fgets(cadastro[totalTerritorio].cor, tam_string, stdin);
 
-            printf("Digite o nome da Editora:");
-            fgets(biblioteca[totalLivros].editora, tam_string, stdin);
-
-            biblioteca[totalLivros].nome[strcspn(biblioteca[totalLivros].nome, "\n")] = '\0';
-            biblioteca[totalLivros].autor[strcspn(biblioteca[totalLivros].autor, "\n")] = '\0';
-            biblioteca[totalLivros].editora[strcspn(biblioteca[totalLivros].editora, "\n")] ='\0';
-            
-            printf("Digite a edição:");
-            scanf("%d", &biblioteca[totalLivros].edicao);
+            cadastro[totalTerritorio].nome[strcspn(cadastro[totalTerritorio].nome, "\n")] = '\0';
+            cadastro[totalTerritorio].cor[strcspn(cadastro[totalTerritorio].cor, "\n")] = '\0';
+                        
+            printf("Digite o número de Tropas:");
+            scanf("%d", &cadastro[totalTerritorio].tropas);
             limparBufferEntrada();
 
-            totalLivros++;
+            totalTerritorio++;
 
-            printf("Livro Cadastrado com sucesso!\n");
+        printf("--- Cadastro do Território 2 ---\n\n");
+
+            printf("Digite o nome do Território:");
+            fgets(cadastro[totalTerritorio].nome, tam_string, stdin);
+
+            printf("Digite a cor do Exército:");
+            fgets(cadastro[totalTerritorio].cor, tam_string, stdin);
+
+            cadastro[totalTerritorio].nome[strcspn(cadastro[totalTerritorio].nome, "\n")] = '\0';
+            cadastro[totalTerritorio].cor[strcspn(cadastro[totalTerritorio].cor, "\n")] = '\0';
+                        
+            printf("Digite o número de Tropas:");
+            scanf("%d", &cadastro[totalTerritorio].tropas);
+            limparBufferEntrada();
+
+            totalTerritorio++;
+
+        printf("--- Cadastro do Território 3 ---\n\n");
+
+            printf("Digite o nome do Território:");
+            fgets(cadastro[totalTerritorio].nome, tam_string, stdin);
+
+            printf("Digite a cor do Exército:");
+            fgets(cadastro[totalTerritorio].cor, tam_string, stdin);
+
+            cadastro[totalTerritorio].nome[strcspn(cadastro[totalTerritorio].nome, "\n")] = '\0';
+            cadastro[totalTerritorio].cor[strcspn(cadastro[totalTerritorio].cor, "\n")] = '\0';
+                        
+            printf("Digite o número de Tropas:");
+            scanf("%d", &cadastro[totalTerritorio].tropas);
+            limparBufferEntrada();
+
+            totalTerritorio++;
+
+        printf("--- Cadastro do Território 4 ---\n\n");
+
+            printf("Digite o nome do Território:");
+            fgets(cadastro[totalTerritorio].nome, tam_string, stdin);
+
+            printf("Digite a cor do Exército:");
+            fgets(cadastro[totalTerritorio].cor, tam_string, stdin);
+
+            cadastro[totalTerritorio].nome[strcspn(cadastro[totalTerritorio].nome, "\n")] = '\0';
+            cadastro[totalTerritorio].cor[strcspn(cadastro[totalTerritorio].cor, "\n")] = '\0';
+                        
+            printf("Digite o número de Tropas:");
+            scanf("%d", &cadastro[totalTerritorio].tropas);
+            limparBufferEntrada();
+
+            totalTerritorio++;
+
+        printf("--- Cadastro do Território 5 ---\n\n");
+
+            printf("Digite o nome do Território:");
+            fgets(cadastro[totalTerritorio].nome, tam_string, stdin);
+
+            printf("Digite a cor do Exército:");
+            fgets(cadastro[totalTerritorio].cor, tam_string, stdin);
+
+            cadastro[totalTerritorio].nome[strcspn(cadastro[totalTerritorio].nome, "\n")] = '\0';
+            cadastro[totalTerritorio].cor[strcspn(cadastro[totalTerritorio].cor, "\n")] = '\0';
+                        
+            printf("Digite o número de Tropas:");
+            scanf("%d", &cadastro[totalTerritorio].tropas);
+            limparBufferEntrada();
+
+            totalTerritorio++;
+
+            printf("Territórios Cadastrados com Sucesso!\n");
         } else {
-            printf("Biblioteca cheia! Não é possível cadastrar mais livros.\n");
+            printf("Territórios cheios! Não é possível cadastrar mais Territórios.\n");
         }
         
         printf("\nPressione Enter para continuar...\n");
         getchar(); // Pausa para o usuário ler a mensagem
         break;
 
-    case 2: //Listagem de livros
-        printf("---Listas de livros cadastrados---\n\n");
+    case 2: //Listagem de Territórios
+        printf("---Listas de Territórios cadastrados---\n\n");
 
-        if (totalLivros == 0)
+        if (totalTerritorio == 0)
         {
-            printf("Nenhum livro cadastrado ainda.\n");
+            printf("Nenhum Território cadastrado ainda.\n");
         } else
         {
-            for (int i = 0; i < totalLivros; i++)
+            for (int i = 0; i < totalTerritorio; i++)
             {
                 printf("-----------------------------\n");
-                printf("Livro: %d\n", i + 1);
-                printf("Nome: %s\n", biblioteca[i].nome);
-                printf("Autor: %s\n", biblioteca[i].autor);
-                printf("Editora: %s\n", biblioteca[i].editora);
-                printf("Edição: %s\n", biblioteca[i].edicao);
-            }
-            printf("-----------------------------\n");
+                printf("Território: %d\n", i + 1);
+                printf("Cor do Exército: %d\n", cadastro[i].cor);
+                printf("Tropa: %s\n", cadastro[i].tropa);
+                printf("-----------------------------\n");
             
         }
 
